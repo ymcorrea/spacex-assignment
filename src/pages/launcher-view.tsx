@@ -1,7 +1,9 @@
+import LauncherViewUI from '../core-ui/launcher-view-ui';
+
 const LauncherView = () => {
   return (
     <div>
-      <p>View</p>
+      <LauncherViewUI />
     </div>
   );
 };

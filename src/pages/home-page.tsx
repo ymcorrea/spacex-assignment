@@ -1,9 +1,7 @@
+import HomePageUI from '../core-ui/home-page-ui';
+
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  );
+  return <HomePageUI />;
 };
 
 export default HomePage;
