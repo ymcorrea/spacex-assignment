@@ -1,7 +1,24 @@
+import { Card } from 'antd';
+
 const LauncherViewUI = () => {
+  const gridStyle: React.CSSProperties = {
+    width: '25%',
+    textAlign: 'center',
+  };
+
   return (
     <div>
-      <h1>This is a launcher</h1>
+      <Card title='Card Title'>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid hoverable={false} style={gridStyle}>
+          Content
+        </Card.Grid>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid style={gridStyle}>Content</Card.Grid>
+      </Card>
     </div>
   );
 };
