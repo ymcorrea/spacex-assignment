@@ -1,10 +1,11 @@
 import { Card, Divider, Typography } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { API_ENDPOINTS } from '../../utils/api-endpoints';
+import { API_ENDPOINTS } from '../../routes/api-endpoints';
+import { LaunchCardProps } from '../../types';
 
-const LaunchCard: React.FC<any> = ({ launcher }) => {
-  const { Paragraph, Text } = Typography;
+const LaunchCard: React.FC<LaunchCardProps> = ({ launcher }) => {
+  const { Paragraph } = Typography;
 
   return (
     <Link to={`/${API_ENDPOINTS.LAUNCHER}/${launcher.flight_number}`}>

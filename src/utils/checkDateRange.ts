@@ -1,5 +1,6 @@
 export function checkDateRange(date: Date): string {
   const today = new Date();
+
   if (date.getFullYear() === today.getFullYear()) {
     if (date.getMonth() === today.getMonth()) {
       if (

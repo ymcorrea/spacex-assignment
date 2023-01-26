@@ -1,8 +1,13 @@
 import HeaderUI from '../core-ui/header-ui';
 import { useGetAllLauncherQuery } from '../redux/api/launcher-api';
+import { LauncherType } from '../types';
 import { checkDateRange } from '../utils/checkDateRange';
 
-const Header: React.FC<any> = ({ setLaunchers }: any) => {
+interface HeaderProps {
+  setLaunchers: React.Dispatch<React.SetStateAction<LauncherType[]>>;
+}
+
+const Header = ({ setLaunchers }: HeaderProps) => {
   const { data } = useGetAllLauncherQuery('');
 
   // === Search Function ===
@@ -19,7 +24,7 @@ const Header: React.FC<any> = ({ setLaunchers }: any) => {
   // === Sort by date function ===
   const sortByDateFunction = (selected: string) => {
     const filtered = data.filter(
-      (launcher: any) =>
+      (launcher: LauncherType) =>
         checkDateRange(new Date(launcher.launch_date_utc)) === selected,
     );
 
@@ -29,7 +34,8 @@ const Header: React.FC<any> = ({ setLaunchers }: any) => {
   // === Sort by launcher status ===
   const sortByStatusFunction = (selected: string) => {
     const filtered = data.filter(
-      (launcher: any) => launcher?.launch_success?.toString() === selected,
+      (launcher: LauncherType) =>
+        launcher?.launch_success?.toString() === selected,
     );
     setLaunchers(filtered);
   };
@@ -37,7 +43,7 @@ const Header: React.FC<any> = ({ setLaunchers }: any) => {
   // === Sort by Is Upcomming ===
   const onSelectUpcoming = (selected: string) => {
     const filtered = data.filter(
-      (launcher: any) => launcher?.upcoming?.toString() === selected,
+      (launcher: LauncherType) => launcher?.upcoming?.toString() === selected,
     );
     setLaunchers(filtered);
   };

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_ENDPOINTS } from '../../utils/api-endpoints';
+import { API_ENDPOINTS } from '../../routes/api-endpoints';
 
 // Define a service using a base URL and expected endpoints
 export const launcherApi = createApi({

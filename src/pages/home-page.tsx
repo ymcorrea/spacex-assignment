@@ -2,10 +2,11 @@ import { Spin } from 'antd';
 import { useEffect, useState } from 'react';
 import HomePageUI from '../core-ui/home-page-ui';
 import { useGetAllLauncherQuery } from '../redux/api/launcher-api';
+import { LauncherType } from '../types';
 
 const HomePage = () => {
   const { data, isLoading } = useGetAllLauncherQuery('');
-  const [launchers, setLaunchers] = useState(data);
+  const [launchers, setLaunchers] = useState<LauncherType[]>(data);
 
   useEffect(() => {
     setLaunchers(data);
@@ -13,11 +14,7 @@ const HomePage = () => {
 
   return (
     <Spin spinning={isLoading}>
-      <HomePageUI
-        isLoading={isLoading}
-        launchers={launchers}
-        setLaunchers={setLaunchers}
-      />
+      <HomePageUI launchers={launchers} setLaunchers={setLaunchers} />
     </Spin>
   );
 };
