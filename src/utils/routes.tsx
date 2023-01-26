@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import HomePage from '../pages/home-page';
 import LauncherView from '../pages/launcher-view';
+import { API_ENDPOINTS } from './api-endpoints';
 
 export const routes = createBrowserRouter([
   {
@@ -8,7 +9,7 @@ export const routes = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: '/view/:id',
+    path: `/${API_ENDPOINTS.LAUNCHER}/:id`,
     element: <LauncherView />,
   },
 ]);
