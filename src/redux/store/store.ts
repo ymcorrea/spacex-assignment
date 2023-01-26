@@ -5,7 +5,8 @@ export const store = configureStore({
   reducer: {
     [launcherApi.reducerPath]: launcherApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([launcherApi.middleware]),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat([launcherApi.middleware]),
 });
 
 export type AppDispatch = typeof store.dispatch;

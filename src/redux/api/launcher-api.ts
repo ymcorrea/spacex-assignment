@@ -22,4 +22,5 @@ export const launcherApi = createApi({
   }),
 });
 
-export const { useGetAllLauncherQuery, useGetSingleLauncherQuery } = launcherApi;
+export const { useGetAllLauncherQuery, useGetSingleLauncherQuery } =
+  launcherApi;
