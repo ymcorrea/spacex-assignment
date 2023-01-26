@@ -12,7 +12,7 @@ const HeaderUI: React.FC<any> = ({
     <Row justify='space-between' gutter={[16, 16]} align='middle'>
       <Col lg={12} xs={22}>
         <Search
-          placeholder='Search launcher by name'
+          placeholder='Search by Rocket name'
           allowClear
           enterButton='Search'
           size='large'
