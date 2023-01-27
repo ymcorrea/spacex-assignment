@@ -1,6 +1,5 @@
 import { Col, Input, Row, Select } from 'antd';
 import Search from 'antd/es/input/Search';
-import { Option } from 'antd/es/mentions';
 
 const HeaderUI: React.FC<any> = ({
   onSelectUpcoming,
@@ -31,9 +30,9 @@ const HeaderUI: React.FC<any> = ({
             size='large'
             onSelect={sortByDateFunction}
           >
-            <Option value='week'>Last Week</Option>
-            <Option value='month'>Last Month</Option>
-            <Option value='year'>Last Year</Option>
+            <Select.Option value='week'>Last Week</Select.Option>
+            <Select.Option value='month'>Last Month</Select.Option>
+            <Select.Option value='year'>Last Year</Select.Option>
           </Select>
           <Select
             style={{ width: '33%' }}
@@ -41,8 +40,8 @@ const HeaderUI: React.FC<any> = ({
             size='large'
             onSelect={sortByStatusFunction}
           >
-            <Option value='false'>Failer</Option>
-            <Option value='true'>Success</Option>
+            <Select.Option value='false'>Failer</Select.Option>
+            <Select.Option value='true'>Success</Select.Option>
           </Select>
           <Select
             style={{ width: '33%' }}
@@ -50,8 +49,8 @@ const HeaderUI: React.FC<any> = ({
             size='large'
             onSelect={onSelectUpcoming}
           >
-            <Option value='true'>Upcomming</Option>
-            <Option value='false'>Not Upcomming</Option>
+            <Select.Option value='true'>Upcomming</Select.Option>
+            <Select.Option value='false'>Not Upcomming</Select.Option>
           </Select>
         </Input.Group>
       </Col>
